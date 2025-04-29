@@ -54,7 +54,7 @@ pipeline{
         stage("Docker Build & Push"){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                   withDockerRegistry(credentialsId: 'docker'){   
                        sh "docker build -t zomato ."
                        sh "docker tag zomato soumyahe/zomato:latest "
                        sh "docker push soumyahe/zomato:latest "
